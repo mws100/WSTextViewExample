@@ -4,7 +4,7 @@ OC实现的高度自适应的Textview
 ###背景
 以前项目中发表评论的功能一直用的是固定高度的UITextView，用户通过上下滚动来查看输入的内容，体验并不好。最近在优化使用体验，自己封装了个自适应高度的TextView组件。先看下效果：
 
-![WSTextViewExample.gif](http://upload-images.jianshu.io/upload_images/1425951-25c4473a138e9cd1.gif?imageMogr2/auto-orient/strip)
+[gif效果图有点大，这里不能显示，可到简书查看，😀](http://www.jianshu.com/p/b8d65ea1afb1)
 
 ###设计思路
 + 继承自UITextView
