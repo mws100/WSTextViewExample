@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJF-99-x9B">
+                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNq-zM-7Kx">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="hQW-hf-I2H"/>
+                                            <constraint firstAttribute="width" constant="44" id="hW9-4X-deT"/>
+                                        </constraints>
+                                        <state key="normal" image="Album_ToolViewKeyboard"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqx-ad-dJw">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="FzY-tI-pJJ"/>
+                                            <constraint firstAttribute="width" constant="44" id="edk-mq-TKR"/>
+                                        </constraints>
+                                        <state key="normal" image="plus"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsD-8c-Dxo">
+                                        <rect key="frame" x="287" y="0.0" width="44" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="8W5-NM-iJT"/>
+                                            <constraint firstAttribute="width" constant="44" id="G7j-v3-3CJ"/>
+                                            <constraint firstAttribute="height" constant="53" id="RfG-Xf-ZcE"/>
+                                        </constraints>
+                                        <state key="normal" image="Album_ToolViewEmotion"/>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-hm-cjw" customClass="WSTextView">
+                                        <rect key="frame" x="49" y="10" width="233" height="33"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Lqx-ad-dJw" secondAttribute="bottom" id="AOq-YC-RUL"/>
+                                    <constraint firstAttribute="bottom" secondItem="XsD-8c-Dxo" secondAttribute="bottom" id="FwH-cd-m3g"/>
+                                    <constraint firstAttribute="height" constant="53" id="IKd-kh-REz"/>
+                                    <constraint firstItem="uzx-hm-cjw" firstAttribute="leading" secondItem="oNq-zM-7Kx" secondAttribute="trailing" constant="5" id="Myp-NU-NIg"/>
+                                    <constraint firstItem="XsD-8c-Dxo" firstAttribute="leading" secondItem="uzx-hm-cjw" secondAttribute="trailing" constant="5" id="VVg-7x-Jeb"/>
+                                    <constraint firstItem="uzx-hm-cjw" firstAttribute="top" secondItem="bJF-99-x9B" secondAttribute="top" constant="10" id="Yv5-Tv-bIp"/>
+                                    <constraint firstItem="Lqx-ad-dJw" firstAttribute="leading" secondItem="XsD-8c-Dxo" secondAttribute="trailing" id="aeI-qX-csf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lqx-ad-dJw" secondAttribute="trailing" id="ahA-5g-7E8"/>
+                                    <constraint firstAttribute="bottom" secondItem="uzx-hm-cjw" secondAttribute="bottom" constant="10" id="fgJ-Yv-bbB"/>
+                                    <constraint firstItem="oNq-zM-7Kx" firstAttribute="leading" secondItem="bJF-99-x9B" secondAttribute="leading" id="g8m-Qi-s5c"/>
+                                    <constraint firstAttribute="bottom" secondItem="oNq-zM-7Kx" secondAttribute="bottom" id="w5C-iB-vHj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60606836484142856" green="0.60576910452857147" blue="0.42965248599714284" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bJF-99-x9B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z2c-5M-seU"/>
+                            <constraint firstAttribute="trailing" secondItem="bJF-99-x9B" secondAttribute="trailing" id="lSe-77-zwZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bJF-99-x9B" secondAttribute="bottom" id="zcW-Rg-Cv4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomViewBottom" destination="zcW-Rg-Cv4" id="Qyc-Ee-GBV"/>
+                        <outlet property="bottomViewH" destination="IKd-kh-REz" id="ZIb-dS-6nt"/>
+                        <outlet property="textView" destination="uzx-hm-cjw" id="EeG-Dc-O4C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Album_ToolViewEmotion" width="30" height="30"/>
+        <image name="Album_ToolViewKeyboard" width="30" height="30"/>
+        <image name="plus" width="30" height="30"/>
+    </resources>
+</document>
