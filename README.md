@@ -89,4 +89,4 @@ OC实现的高度自适应的Textview
 
 代码也很简单能看懂，核心代码就是高度的计算，计算的时候不能忘了加上textView的上下inset。
 
-placeHolder的功能，有需要的话，后续我也会添加。
+2017.11.15：update-已添加placeHolder的功能
