@@ -25,6 +25,9 @@
     
     //设置最大行数
     self.textView.maxNumberOfLines = 4;
+    //设置提示内容
+    self.textView.placeHolder = @"请输入内容";
+    self.textView.placeHolderColor = [UIColor lightGrayColor];
     
     //高度改变的回调
     __weak typeof(self) wself = self;

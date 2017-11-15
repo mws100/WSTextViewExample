@@ -11,6 +11,7 @@
 @interface WSTextView ()
 @property (nonatomic, assign) CGFloat maxHeight;
 @property (nonatomic, assign) CGFloat currentHeight;
+@property (nonatomic, strong) UILabel *placeHolderLabel;
 @end
 
 @implementation WSTextView
@@ -36,6 +37,14 @@
     self.layer.cornerRadius = 5.f;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
+    
+    [self addObserver:self forKeyPath:@"font" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    UIFont *newFont = change[NSKeyValueChangeNewKey];
+    self.placeHolderLabel.font = newFont;
+    self.placeHolderLabel.frame = CGRectMake(self.textContainerInset.left + 7, self.textContainerInset.top, self.bounds.size.width, self.font.lineHeight);
 }
 
 - (void)textDidChange {
@@ -49,6 +58,8 @@
             self.ws_textHeightChangeHandle(self.text, height);
         }
     }
+    
+    self.placeHolderLabel.hidden = (self.text.length > 0);
 }
 
 - (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines {
@@ -58,6 +69,27 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self removeObserver:self forKeyPath:@"font"];
+}
+
+- (void)setPlaceHolder:(NSString *)placeHolder {
+    _placeHolder = [_placeHolder copy];
+    self.placeHolderLabel.text = placeHolder;
+    [self addSubview:self.placeHolderLabel];
+}
+
+- (void)setPlaceHolderColor:(UIColor *)placeHolderColor {
+    _placeHolderColor = placeHolderColor;
+    _placeHolderLabel.textColor = placeHolderColor;
+}
+
+- (UILabel *)placeHolderLabel {
+    if (!_placeHolderLabel) {
+        _placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.textContainerInset.left + 7, self.textContainerInset.top, self.bounds.size.width, self.font.lineHeight)];
+        _placeHolderLabel.font = self.font;
+    }
+    return _placeHolderLabel;
 }
 
 @end
+
